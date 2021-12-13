@@ -168,8 +168,8 @@ UML
 <img width="1898" alt="UML" src="https://user-images.githubusercontent.com/47754727/145893608-e3614350-71e6-466b-8e9b-956f79deb9a2.png">
 
 # Results Run Time using junit
-        <b>Note: the run time of the algorithms may change between computers and even between to runs of the same json file</b></br>
-        <b>Build and load the graph:</b></br>
+        - Note: the run time of the algorithms may change between computers and even between to runs of the same json file</b></br>
+        Build and load the graph:
         G1.json (17 Nodes): 62 ms</br>
         G2.json (31 Nodes): 72 ms</br>
         G3.json (48 Nodes): 83 ms</br>
@@ -177,7 +177,7 @@ UML
         10,000 Nodes: 1 sec 124 ms</br>
         100,000 Nodes: 12 sec 31 sec</br>
         
-        <b>isConnected:</b></br>
+        isConnected:
         G1.json (17 Nodes):62 ms</br>
         G2.json (31 Nodes):85 ms</br>
         G3.json (48 Nodes):86 ms</br>
@@ -185,7 +185,7 @@ UML
         10,000 Nodes:2 sec 373 ms</br>
         100,000 Nodes:3 min 1 sec</br>
 
-        <b>center:</b></br>
+        center:
         G1.json (17 Nodes):69 ms</br>
         G2.json (31 Nodes):83 ms</br>
         G3.json (48 Nodes):98 ms</br>
@@ -193,7 +193,7 @@ UML
         10,000 Nodes:6 min 48 sec</br>
         100,000 Nodes:</br>
 
-        <b>tsp:</b></br>
+        tsp:
         G1.json (17 Nodes):110ms</br>
         G2.json (31 Nodes):327ms</br>
         G3.json (48 Nodes):498ms</br>
@@ -201,16 +201,14 @@ UML
         10,000 Nodes (30 cities): 1 min, 22 sec</br>
         10,000 Nodes (50 cities): 5 min, 33 sec</br>
         100,000 Nodes (10 cities) 5 min 4 sec:</br>
-Instructions for using the GUI
-        - <b>File Menu</b></br>By clicking <b>Load</b> you can load a graph from a json file                        existing in your computer.</br>By clicking <b>Save</b> the graph will be saved and                    replace the existing file with his name.</br>By clicking <b>Save as</b> the                          graph will be saved in the directory as your choose with the name that you gave.
-        - 
-        - 
-        - 
-Instructions for running the program
-Download the following zip file-
+# Instructions for using the GUI
+        - File Menu By clicking <b>Load</b> you can load a graph from a json file existing in your computer.
+        - By clicking <b>Save</b> the graph will be saved and replace the existing file with his name.
+        - By clicking "Save as" the graph will be saved in the directory as your choose with the name that you gave.
 
-////
-Extract the files to your computer.
-Open CMD.
-Cd the directory that you saved the files in.
-Write the next command: java -jar Ex2.jar "enter the full path of the json file:
+# Instructions for running the program
+        - Download the following zip file- [Ex2.zip](https://github.com/yehonatan169/Ex2_SS/files/7707176/Ex2.zip)
+        - Extract the files to your computer.
+        - Open CMD.
+        - Cd the directory that you saved the files in.
+        - Write the next command: java -jar "enter the full path of the Ex2.jar" "enter the full path of the json file"
