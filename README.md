@@ -86,43 +86,54 @@ Graph Design
         this implemenations will allow us to quickly iterate both all edges, and also all edges belonging to a certain source node.
 GUI
 when the gui is opened and a graph is loaded - the graph will be displayed:
+<img width="955" alt="GUI1" src="https://user-images.githubusercontent.com/47754727/145893545-3afaf98f-aafc-4a19-a2d0-ae991bc7e9bd.png">
 
-GUI1
+
 
 at the menu you will have some options:
 
 load & save - the load option allows you to load from you computer any graph that is saved in json format. the save option allows you to save your graph as json file in your computer, there is no need to write ".json" in your file, it is done for you!
-GUI2
+<img width="960" alt="GUI2" src="https://user-images.githubusercontent.com/47754727/145893515-0d0edfac-48d9-401a-a251-2af821247084.png">
 
-GUISave
+
+<img width="960" alt="GUISave" src="https://user-images.githubusercontent.com/47754727/145893482-c84ae887-b11c-4178-99fb-da65c686da95.png">
+
 
 display:
 at the display section you can do:
 
 add node - when adding a node you will have to enter x and y coordinates of your screen - starting from top left corner. at those coordinates the node will be added. when saving the graph with the added nodes - the node coordinates will be scaled with the rest of graph, thus it will retain its proportions with the graph for any screen size on further loads. the node id is being automatically assigned upon addition.
 GUIaddNode
+<img width="956" alt="GUIaddNode" src="https://user-images.githubusercontent.com/47754727/145893428-0445953b-19ff-4ecd-b89d-9c57694c8525.png">
 
 remove node - enter node id, and if there is a node with this id - the node will be deleted from the graph, all edges which come to/from the node will be also deleted.
+
 
 add edge - enter source node, destination node and edge weight and the edge will be added. if there is already an edge between source and the destination node - the added edge will replace the old edge.
 
 GUIaddEdge
 
 remove edge - enter source and destination node, and if there is an edge that connects them - it will be deleted.
+
 actions:
 display shortest path and distance - enter source and destination nodes - and first a message box will appear with the minimum distance between them. then the nodes and edges that show the path will be colored in purple, highlighting them. if there is no possible path, or the input is invalid - appropiate message will be displayed.
 distance
+<img width="960" alt="distance" src="https://user-images.githubusercontent.com/47754727/145893371-735da552-e674-4885-b7d7-d0b8a3395cd9.png">
 
 display center - calculates for you the center of the graph, displaying a message box with the answer and highlighting the node.
 center
+<img width="960" alt="center" src="https://user-images.githubusercontent.com/47754727/145893297-d8d60461-e775-4026-9406-37e881b66bad.png">
 
 isConnected? checks if the graph is connected and displaying a message box with the answer.
 connected
+<img width="960" alt="connected" src="https://user-images.githubusercontent.com/47754727/145893289-added6f9-bb75-49ae-aaf9-4013503377b3.png">
 
 tsp - enter keys of nodes you wish to be checked as cities, and the shortest found path will be highlighted.
 input: tsp1
+<img width="960" alt="tsp1" src="https://user-images.githubusercontent.com/47754727/145893251-9f25cd9a-e7db-48ea-9241-0366fc90ec8c.png">
 
 result: tsp2
+<img width="960" alt="tsp2" src="https://user-images.githubusercontent.com/47754727/145893263-4af070b3-66c1-4497-8de3-b7474a91ed7f.png">
 
 Folders:
 api:
@@ -154,7 +165,7 @@ EdgedataTest
 directeweightedgraphTest
 DWGATest
 UML
-UML
+<img width="1898" alt="UML" src="https://user-images.githubusercontent.com/47754727/145893608-e3614350-71e6-466b-8e9b-956f79deb9a2.png">
 
 Results Run Time using junit
         <b>Note: the run time of the algorithms may change between computers and even between to runs of the same json file</b>
