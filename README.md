@@ -1,13 +1,13 @@
-Ex2:
+# Ex2:
 third assignment of OOP course. Contributers: Yehonatan Amosi, Amit Goffer
 
-Project theme:
+# Project theme:
 In this project we are assigned to implement a Directed Weighted Graph, and run basic algorithms on it. We also were asked to build a GUI were you could load and save graphs using a JSON file.
 
-Algorithems:
+# Algorithems:
 isConnected: - This function check if a graph is strongly connected (if there is a path from each node to each node). - The algorithm checks the first BFS to mark if all the nodes were visited, then reverse all the edges of the nodes and set visited tag of them to nonvisited and proceed a final BFS. If at the end all the nodes are visited then the graph is connected.
 
-shortestPathDist & shortestPath:
+# shortestPathDist & shortestPath:
 
 The function uses Dijkstra Algorithm method to calculate the distance.
 both function use a shared calculating methods: 'distanceInit' and 'ShortestDistAid' which make the calculations and returns an
@@ -49,9 +49,10 @@ at the end of the function - relevant data is returned and the function finishes
 
 Returned data: the calculating functions return an object of the class 'DistanceReturnedData' - which is a designated class whose purpose is to store both the found distance as double, and the formed List of the path that was found. these data members are the values that returned to 'shortestPathDist' and 'shortestPath' respectively. in addition - there is a third function that called 'getBothDistanceAndPath' which returns both distance and path with a single calculation. - The complexity of the 'shortestPathDist' and 'shortestPath' using Dijkstra Algorithm is O(|E|) - as the algorithm in the worst case checks every possible edge in the graph.
 
-shortestPath: This function return a List of the ordered shortest path from source node to destination node: src--> n1-->n2-->...dest. see: https://en.wikipedia.org/wiki/Shortest_path_problem . NOTE if no such path --> returns null;
+# shortestPath: This function return a List of the ordered shortest path from source node to destination node: src--> n1-->n2-->...dest. see: https://en.wikipedia.org/wiki/Shortest_path_problem . NOTE if no such path --> returns null;
 
-center: -in the function center, we are looking for node whose maximum distance to any other node - is the lowest of all the nodes. for that the general idea is to check every node, take from each one the highest distance to all other nodes (the minimum distance to each node), and from all maximum distances found - we take the lowest distance. the node with that lowest distance - is the center of the graph.
+# center:
+-in the function center, we are looking for node whose maximum distance to any other node - is the lowest of all the nodes. for that the general idea is to check every node, take from each one the highest distance to all other nodes (the minimum distance to each node), and from all maximum distances found - we take the lowest distance. the node with that lowest distance - is the center of the graph.
 
 how it works: first, we initialize variable that called "currentMaxDistance" whose purpose is to store the maximum distance obtained from every node.
 then, we take at the first possible node, and we use the 'distanceInit' and 'ShortestDistAid' that the checked node is given as source input. however, this time there is no destination input (the destinatation input is -1), the reason for that is that we are not looking for the distance to a specific node, but generally find the maximal possible distance, to any node.
@@ -61,7 +62,8 @@ as the first node recieve the returned distance data from the 'ShortestDistAid' 
 at the second node run of 'ShortestDistAid' - it is possible that the maximum distance will be greater than 'key' - the maximum distance possible found at the first node's run. and it is possible that the greater distance can be found before the 'ShortestDistAid' function is finished, if that the case - we know for sure that the second node is definetly not the center, and we immediately stop the 'ShortestDistAid' calculation, and proceed to check the next node. that methods result is saving time for the calculation.
 if after we check another node, and the returned result is lower than 'key', then key will be the new returned result for next nodes calculations. -the function ends when all nodes were checked, the the returned result is the node which gave us the 'key' - the lowest of the maximums of distances.
 the running time is the amount of nodes * the run time of each Dijkstra calculation = O(|V| * |E|). the "key method" however can decrease some of the total running time.
-tsp:
+
+# tsp:
 The tsp - traveling salesman's problem purpose is to find the shortest route which goes trough every city a least once. in the graph - we need to find a path that goes trough every node that was included on input, and if needed - we can use other no cities node to find the graph.
 Before discussing the function itself, it's important to note that the "brute force" method - checking every possible premutation of the input is not viable for large number of cities, that is because the running time of such methos is O(n!).
 Dynamic programming is also not viable in this situation, that is because we can use nodes multiple times, which makes the table creating of "subproblem" route - too costly as there are too many subproblems.
@@ -72,7 +74,8 @@ How the algorithm works: Lets assume the input is: "A,B,C,D,E" (every letter rep
 first - we will take 'A' and puts it in a new list. then we will take B, and we will check A->B, and B->A. and we take the option which gives us the lower distance. lets assume B->A was selected. before checking 'C' node - we check the path of B-> with 'shortestPath'. if, for example - the shortest path is B->D->A, it means that from 'B' to 'A' we pass through another city in the input. so we can eliminate 'D' from the input list, and add it at the result list between 'A' and 'B' and for now the output list will be "B, D, A". next - we check the next un-used city in the input list - 'C'. we check all possible combinations: C->B->D->A, B->C->D->A, B->D->C->A, B->D->A->C. lets assume B->C->D->A path was found to be the shortest. we will check all B->C, C->D, D->A paths to see if the remaining city 'E' is located in any of the paths. if so - we insert it at the right place, like the way we inserted 'C', then it means we found the path. else - we do the same calculation with E city.
 If with any of the calculations - 'shortestPath' will return null for every premutation of given city, it means there is no possible path that goes through every city and the function will return null.
 This calculation will assure relatively low distance result for path, if exists.
-Graph Design
+
+# Graph Design
         the graph is implemented with 3 HashMaps:
         - the first - Node Hashmap, which with given Integer key - will retrieve the matching node.
         - secondly - Edge Hashmap, which with given key - will retrieve the matching node.
@@ -84,7 +87,8 @@ Graph Design
         the solution was creating a hashmap of hashmaps - the outer hashmap key is the source node's key. and the value is an inner hashmap.
         within each inner hashmap - the key is the destination node's key, and the value is the HashIndex object whiched is used as the key for the second hashmap.
         this implemenations will allow us to quickly iterate both all edges, and also all edges belonging to a certain source node.
-GUI
+        
+# GUI
 when the gui is opened and a graph is loaded - the graph will be displayed:
 <img width="955" alt="GUI1" src="https://user-images.githubusercontent.com/47754727/145893545-3afaf98f-aafc-4a19-a2d0-ae991bc7e9bd.png">
 
@@ -92,30 +96,32 @@ when the gui is opened and a graph is loaded - the graph will be displayed:
 
 at the menu you will have some options:
 
-load & save - the load option allows you to load from you computer any graph that is saved in json format. the save option allows you to save your graph as json file in your computer, there is no need to write ".json" in your file, it is done for you!
+# load & save
+- the load option allows you to load from you computer any graph that is saved in json format. the save option allows you to save your graph as json file in your computer, there is no need to write ".json" in your file, it is done for you!
 <img width="960" alt="GUI2" src="https://user-images.githubusercontent.com/47754727/145893515-0d0edfac-48d9-401a-a251-2af821247084.png">
 
 
 <img width="960" alt="GUISave" src="https://user-images.githubusercontent.com/47754727/145893482-c84ae887-b11c-4178-99fb-da65c686da95.png">
 
 
-display:
+# display:
 at the display section you can do:
 
 add node - when adding a node you will have to enter x and y coordinates of your screen - starting from top left corner. at those coordinates the node will be added. when saving the graph with the added nodes - the node coordinates will be scaled with the rest of graph, thus it will retain its proportions with the graph for any screen size on further loads. the node id is being automatically assigned upon addition.
 GUIaddNode
 <img width="956" alt="GUIaddNode" src="https://user-images.githubusercontent.com/47754727/145893428-0445953b-19ff-4ecd-b89d-9c57694c8525.png">
 
-remove node - enter node id, and if there is a node with this id - the node will be deleted from the graph, all edges which come to/from the node will be also deleted.
+# remove node
+- enter node id, and if there is a node with this id - the node will be deleted from the graph, all edges which come to/from the node will be also deleted.
 
 
-add edge - enter source node, destination node and edge weight and the edge will be added. if there is already an edge between source and the destination node - the added edge will replace the old edge.
+# add edge
+- enter source node, destination node and edge weight and the edge will be added. if there is already an edge between source and the destination node - the added edge will replace the old edge.
 
-GUIaddEdge
-
+# GUIaddEdge
 remove edge - enter source and destination node, and if there is an edge that connects them - it will be deleted.
 
-actions:
+# actions:
 display shortest path and distance - enter source and destination nodes - and first a message box will appear with the minimum distance between them. then the nodes and edges that show the path will be colored in purple, highlighting them. if there is no possible path, or the input is invalid - appropiate message will be displayed.
 distance
 <img width="960" alt="distance" src="https://user-images.githubusercontent.com/47754727/145893371-735da552-e674-4885-b7d7-d0b8a3395cd9.png">
@@ -135,36 +141,34 @@ input: tsp1
 result: tsp2
 <img width="960" alt="tsp2" src="https://user-images.githubusercontent.com/47754727/145893263-4af070b3-66c1-4497-8de3-b7474a91ed7f.png">
 
-Folders:
+# Folders:
 api:
-
-GeoLocation
-NodeData
-EdgeData
-DirectedWeightedGraph
-DirectedWeightedGraphAlgorithms
-GUI:
-
-frameGUI
-GUImenu
-panelGUI
-Main Classes:
-
-geolocation
-Vertex
-Edgedata
-directeweightedgraph
-DWGA
-DistanceReturnedData
-HashIndex
-Test:
-
-geolocationTest
-VertexTest
-EdgedataTest
-directeweightedgraphTest
-DWGATest
-UML
+        - GeoLocation
+        - NodeData
+        - EdgeData
+        - DirectedWeightedGraph
+        - DirectedWeightedGraphAlgorithms
+# GUI:
+        - frameGUI
+        - GUImenu
+        - panelGUI
+        
+# Main Classes:
+        - geolocation
+        - Vertex
+        - Edgedata
+        - directeweightedgraph
+        - DWGA
+        - DistanceReturnedData
+        - HashIndex
+        
+# Test:
+        - geolocationTest
+        - VertexTest
+        - EdgedataTest
+        - directeweightedgraphTest
+        - DWGATest
+# UML
 <img width="1898" alt="UML" src="https://user-images.githubusercontent.com/47754727/145893608-e3614350-71e6-466b-8e9b-956f79deb9a2.png">
 
 # Results Run Time using junit
