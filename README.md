@@ -212,7 +212,7 @@ api:
         - By clicking "Save as" the graph will be saved in the directory as your choose with the name that you gave.
 
 # Instructions for running the program
-        - Download the following zip file- https://github.com/yehonatan169/Ex2_SS/files/7707176/Ex2.zip
+        - Download the following zip file- https://github.com/yehonatan169/Ex2_SS/releases/download/v.1/Ex2_jar.zip
         - Extract the files to your computer.
         - Open CMD.
         - Cd the directory that you saved the files in.
