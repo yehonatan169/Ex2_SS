@@ -49,7 +49,8 @@ at the end of the function - relevant data is returned and the function finishes
 
 Returned data: the calculating functions return an object of the class 'DistanceReturnedData' - which is a designated class whose purpose is to store both the found distance as double, and the formed List of the path that was found. these data members are the values that returned to 'shortestPathDist' and 'shortestPath' respectively. in addition - there is a third function that called 'getBothDistanceAndPath' which returns both distance and path with a single calculation. - The complexity of the 'shortestPathDist' and 'shortestPath' using Dijkstra Algorithm is O(|E|) - as the algorithm in the worst case checks every possible edge in the graph.
 
-# shortestPath: This function return a List of the ordered shortest path from source node to destination node: src--> n1-->n2-->...dest. see: https://en.wikipedia.org/wiki/Shortest_path_problem . NOTE if no such path --> returns null;
+# shortestPath: 
+This function return a List of the ordered shortest path from source node to destination node: src--> n1-->n2-->...dest. see: https://en.wikipedia.org/wiki/Shortest_path_problem NOTE if no such path --> returns null;
 
 # center:
 -in the function center, we are looking for node whose maximum distance to any other node - is the lowest of all the nodes. for that the general idea is to check every node, take from each one the highest distance to all other nodes (the minimum distance to each node), and from all maximum distances found - we take the lowest distance. the node with that lowest distance - is the center of the graph.
