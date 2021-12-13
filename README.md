@@ -167,8 +167,8 @@ DWGATest
 UML
 <img width="1898" alt="UML" src="https://user-images.githubusercontent.com/47754727/145893608-e3614350-71e6-466b-8e9b-956f79deb9a2.png">
 
-Results Run Time using junit
-        <b>Note: the run time of the algorithms may change between computers and even between to runs of the same json file</b>
+# Results Run Time using junit
+        <b>Note: the run time of the algorithms may change between computers and even between to runs of the same json file</b></br>
         <b>Build and load the graph:</b></br>
         G1.json (17 Nodes): 62 ms</br>
         G2.json (31 Nodes): 72 ms</br>
