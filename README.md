@@ -1,4 +1,4 @@
-# Ex2:
+# Ex3:
 third assignment of OOP course. Contributers: Yehonatan Amosi, Amit Goffer
 
 # Project theme:
