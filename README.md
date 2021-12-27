@@ -1,5 +1,5 @@
-# Ex3:
-third assignment of OOP course. Contributers: Yehonatan Amosi, Amit Goffer
+# Ex2:
+second assignment of OOP course. Contributers: Yehonatan Amosi, Amit Goffer
 
 # Project theme:
 In this project we are assigned to implement a Directed Weighted Graph, and run basic algorithms on it. We also were asked to build a GUI were you could load and save graphs using a JSON file.
